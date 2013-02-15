@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Array Sorting:  Numbers</title>
+<style type="text/css">
+	
+	body {	
+		font-family:Verdana, arial,sans-serif;		
+		font-size:larger;		
+	}
+</style>
+<!--Keep the qQuery js file at google rather than locally-->
+<script type="text/javascript"
+    src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js">
+</script>
+
+<script type="text/javascript">
+
+    //--------------------------------------------------------------------
+    // Name:  ready
+    //--------------------------------------------------------------------
+    $(document).ready(function () {
+
+        var display;
+
+        //Create array of string values
+        var myArray = [40, 300, 50, 7]
+
+        //Display original array
+        display = "<h3>Original Array of Numeric values</h3>"
+        for (arrayIndex in myArray) {
+            display = display + myArray[arrayIndex] + "<br /> ";
+        }
+
+        //Sort array
+        myArray.sort();
+
+        //Display original array
+        display += "<h3>Sorted Using .sort() => Not correct! It sorts as if they were strings, not numbers.</h3>"
+        for (arrayIndex in myArray) {
+            display = display + myArray[arrayIndex] + "<br /> ";
+        }
+
+        //Sort using a sort function
+        myArray.sort(function (a, b) { return a - b });
+
+        //Display array sorted with sortFunction
+        display += "<h3>Sorted using Sort Function</h3>"
+        for (arrayIndex in myArray) {
+            display = display + myArray[arrayIndex] + "<br /> ";
+        }
+
+        //Reverse-Sort using a sort function
+        myArray.sort(function (a, b) { return b - a });
+
+        //Display array sorted with sortFunction
+        display += "<h3>Reverse-Sorted using Sort Function</h3>"
+        for (arrayIndex in myArray) {
+            display = display + myArray[arrayIndex] + "<br /> ";
+        }
+
+        //Display all items in the array
+        $("#divDisplay").append(display);
+
+    });
+
+
+</script>
+
+</head>
+<body >
+<h1>Sorting an Array of Numeric Values</h1>
+<div id="divDisplay"> </div>
+
+</body>
+</html>

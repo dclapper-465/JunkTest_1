@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Array of Objects</title>
+<style type="text/css">
+	
+	body {	
+		font-family:Verdana, arial,sans-serif;		
+		font-size:larger;		
+	}
+</style>
+
+<!--Keep the qQuery js file at google rather than locally-->
+<script type="text/javascript"
+    src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js">
+</script>
+
+<script type="text/javascript">
+
+    var arrayOfLocations = new Array();
+
+    //This function creates the LocationInfo 'object'
+    function LocationInfo(parLat, parLong, parInfoDisplay) {
+        this.Latitude = parLat;
+        this.Longitude = parLong;
+        this.DisplayInfo = parInfoDisplay;
+    }
+
+    //--------------------------------------------------------------------
+    //The ready function only runs after everything on the page is loaded.
+    //This avoids trying to use DOM objects before they have been loaded.
+    //--------------------------------------------------------------------
+    $(document).ready(function () {
+
+        var arrayIndex;
+        var display = "";
+
+        //Create some objects
+        //Create a filled LocationInfo object
+        var whiteHouseLocation = new LocationInfo(35.308973,
+                                                  -83.186279,
+                                                  "H.F. Robinson Administration Building");
+
+        //Create another filled object
+        var forsythLocation = new LocationInfo(35.310777,
+                                             -83.181311,
+                                             "College of Business, Forsyth Bldg.");
+
+        //Create another filled object
+        var ramseyLocation = new LocationInfo(35.303679,
+                                                -83.182343,
+                                                "Ramsey Arena");
+
+        //Add some objects to the array
+        arrayOfLocations.push(whiteHouseLocation);
+        arrayOfLocations.push(forsythLocation);
+        arrayOfLocations.push(ramseyLocation);
+
+        //Using For In to loop through the array
+        for (arrayIndex = 0; arrayIndex < arrayOfLocations.length; arrayIndex = arrayIndex + 1) {
+            var lat = arrayOfLocations[arrayIndex].Latitude;
+            var long = arrayOfLocations[arrayIndex].Longitude;
+            var info = arrayOfLocations[arrayIndex].DisplayInfo;
+
+            display += "<h2>arrayOfLocations[" + arrayIndex + "] </h2>" +
+                        "&nbsp; &nbsp; &nbsp; Latitude=<b>" + lat + "</b><br />" +
+                        "&nbsp; &nbsp; &nbsp; Longitude=<b>" + long + "</b><br />" +
+                        "&nbsp; &nbsp; &nbsp; DisplayInfo=<b>" + info + "</b><p />";
+        }
+
+        //Display all items in the array
+        $("#divDisplay").append(display);
+
+    });  
+</script>
+
+</head>
+<body >
+<h1>Creating an Array of Objects and Looping through it with For Loop</h1>
+<div id="divDisplay"> </div>
+
+</body>
+</html>

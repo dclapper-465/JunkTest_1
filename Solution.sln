@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Unit_6_Javascript_II", ".", "{DF646FA6-405F-4DE1-BDF6-76535146A441}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/Unit_1.a_IntroToJavascript"
+		Debug.AspNetCompiler.PhysicalPath = "..\Unit_7_GeoLocation\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Unit_1.a_IntroToJavascript\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Unit_1.a_IntroToJavascript"
+		Release.AspNetCompiler.PhysicalPath = "..\Unit_7_GeoLocation\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Unit_1.a_IntroToJavascript\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1820"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF646FA6-405F-4DE1-BDF6-76535146A441}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF646FA6-405F-4DE1-BDF6-76535146A441}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

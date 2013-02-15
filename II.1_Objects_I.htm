@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Creating an Object</title>
+
+<!--Keep the qQuery js file at google rather than locally-->
+<script type="text/javascript"
+    src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js">
+</script>
+
+<script type="text/javascript">
+
+    //This is the template for the LocationInfo Object
+    function LocationInfo(parLat, parLong, parInfoDisplay) {
+        this.Latitude = parLat;
+        this.Longitude = parLong;
+        this.DisplayInfo = parInfoDisplay;
+    }
+
+    function Startup() {
+
+        //Create an new instance of the LocationInfo object
+        var whiteHouseLocation = new LocationInfo(35.308973, 
+                                                  -83.186279,
+                                                  "H.F. Robinson Administration Building");
+
+        //Create another instance
+        var forsythLocation = new LocationInfo(35.310777,
+                                             -83.181311,
+                                             "College of Business, Forsyth Bldg.");
+
+        //Display the property values for these objects
+        var display          = "<h3>WhiteHouse location object </h3>" +
+                                "Latitude = " + whiteHouseLocation.Latitude + "<br />" +
+                                "Longitude = " + whiteHouseLocation.Longitude + "<br />" +
+                                "DisplayInfo = " + whiteHouseLocation.DisplayInfo +
+                                "<p></p>" +
+
+                                 "<h3>Forsyth location object </h3>" +
+                                "Latitude = " + forsythLocation.Latitude + "<br />" +
+                                "Longitude = " + forsythLocation.Longitude + "<br />" +
+                                "DisplayInfo = " + forsythLocation.DisplayInfo + "<p></p>";
+
+
+       $("#divDisplay").html(display);
+    }
+
+    //--------------------------------------------------------------------
+    //The ready function only runs after everything on the page is loaded.
+    //This avoids trying to use DOM objects before they have been loaded.
+    //--------------------------------------------------------------------
+    $(document).ready(function () {
+
+           Startup();
+
+    });  
+</script>
+
+</head>
+<body >
+<h1>Creating Two <i>LocationInfo</i> objects</h1>
+<div id="divDisplay"> </div>
+
+</body>
+</html>
